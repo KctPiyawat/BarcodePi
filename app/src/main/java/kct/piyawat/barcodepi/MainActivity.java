@@ -15,6 +15,19 @@ public class MainActivity extends AppCompatActivity {
 //        Create SQLite Database (First Time)
         MyManager myManager = new MyManager(MainActivity.this);
 
+//        Test Add Value
+        String[] strings = new String[]{
+                null,
+                "testName",
+                "testbar",
+                "testPrice",
+                "testDetail",
+                "testPath",
+                "testItem"};
+        myManager.addNewValueToSQLite(strings);
+
+
     }   //Main Method
+
 
 }   //Main Class
