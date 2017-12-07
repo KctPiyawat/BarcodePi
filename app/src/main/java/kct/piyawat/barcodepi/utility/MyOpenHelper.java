@@ -18,7 +18,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
             "id Integer Primary Key," +
             "NameProduct Text," +
             "Barcode Text, " +
-            "Pric Text, " +
+            "Price Text, " +
             "Detail Text, " +
             "PathImage Text, " +
             "Item Text);";
@@ -27,7 +27,7 @@ public class MyOpenHelper extends SQLiteOpenHelper{
     public MyOpenHelper(Context context) {
         super(context,database_name,null,database_version);
         this.context = context;
-    }
+    } // Constructor
 
     @Override
     public void onCreate(SQLiteDatabase db) {

@@ -10,7 +10,7 @@ public class MyConstant {
             "id",
             "NameProduct",
             "Barcode",
-            "Pric",
+            "Price",
             "Detail",
             "PathImage",
             "Item"};
