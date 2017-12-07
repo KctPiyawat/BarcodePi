@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     }   //Main Method
 
+
     private void addFragment(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
 
