@@ -6,6 +6,8 @@ package kct.piyawat.barcodepi.utility;
 
 public class MyConstant {
 
+    private String[] connectedStrings = new String[]{"on", "off"};
+
     private String[] columnProductStrings = new String[]{
             "id",
             "NameProduct",
@@ -14,6 +16,10 @@ public class MyConstant {
             "Detail",
             "PathImage",
             "Item"};
+
+    public String[] getConnectedStrings() {
+        return connectedStrings;
+    }
 
     public String[] getColumnProductStrings() {
         return columnProductStrings;
