@@ -27,6 +27,7 @@ public class ListProductFragment extends Fragment {
     private String[] conectedStrings;
     private int indexAnInt = 0;
     private Handler handler;
+    private boolean statusSynDataABoolean = true;  // true สวภาวะที่จะ Update Data
 
 
 
@@ -55,6 +56,12 @@ public class ListProductFragment extends Fragment {
         checkInternet();
         changeSubTitle();
 
+//        Check Update
+        if (statusSynDataABoolean && (indexAnInt == 0)) {
+            Log.d("12DecV1", "Update Working");
+            statusSynDataABoolean = false;
+        }
+
 //        Delay
         handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -62,7 +69,7 @@ public class ListProductFragment extends Fragment {
             public void run() {
               myLoop();
             }
-        },1000);
+        },10000);
 
     }
 
