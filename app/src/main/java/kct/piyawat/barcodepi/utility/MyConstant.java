@@ -17,7 +17,7 @@ public class MyConstant {
             "PathImage",
             "Item"};
 
-    private String urlGetAllProductString = http;://androidthai.in.th/pi/getAllProductPi.php
+    private String urlGetAllProductString = "http://androidthai.in.th/pi/getAllProductPi.php";
 
 
     public String getUrlGetAllProductString() {

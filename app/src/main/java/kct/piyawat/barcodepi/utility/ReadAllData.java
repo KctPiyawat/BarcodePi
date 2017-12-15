@@ -11,7 +11,7 @@ import com.squareup.okhttp.Response;
  * Created by asus on 12/12/2560.
  */
 
-public class ReadAllData extends AsyncTask<String, Void, String{
+public class ReadAllData extends AsyncTask<String, Void, String>{
 
     private Context context;
 

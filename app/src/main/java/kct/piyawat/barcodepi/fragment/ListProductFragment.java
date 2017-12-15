@@ -13,9 +13,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.json.JSONArray;
+
 import kct.piyawat.barcodepi.MainActivity;
 import kct.piyawat.barcodepi.R;
 import kct.piyawat.barcodepi.utility.MyConstant;
+import kct.piyawat.barcodepi.utility.ReadAllData;
 
 /**
  * Created by asus on 7/12/2560.
@@ -60,6 +63,8 @@ public class ListProductFragment extends Fragment {
         if (statusSynDataABoolean && (indexAnInt == 0)) {
             Log.d("12DecV1", "Update Working");
             statusSynDataABoolean = false;
+
+            mySynchronize();
         }
 
 //        Delay
@@ -72,6 +77,43 @@ public class ListProductFragment extends Fragment {
         },10000);
 
     }
+
+    private void mySynchronize() {
+
+        String tag = "15DecV1";
+
+        try {
+            //        Read ALL Data From JSON
+
+            MyConstant myConstant = new MyConstant();
+            ReadAllData readAllData = new ReadAllData(getActivity());
+            readAllData.execute(myConstant.getUrlGetAllProductString());
+            String jsonString = readAllData.get();
+            Log.d(tag, "JSON ==> " + jsonString);
+            JSONArray jsonArray = new JSONArray(jsonString);
+
+            for (int i=0; i<jsonArray.length(); i+=1) {
+
+
+
+            }// For
+
+
+
+
+
+
+            //        Delete All SQLite and Update New Date to SQLite
+
+            //        Share Operated to Create ListView
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+
+    } // mySyn
 
     private void checkInternet() {
         MyConstant myConstant = new MyConstant();
@@ -86,9 +128,14 @@ public class ListProductFragment extends Fragment {
 
             if (networkInfo.isConnected() && networkInfo != null) {
 
+//                Internet ok
                 indexAnInt = 0;
             } else {
+
+//                Internet False
                 indexAnInt = 1;
+                statusSynDataABoolean = true;
+
 
             }
 
